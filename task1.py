@@ -6,7 +6,7 @@ import copy
 def generate_dict():
     keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     dictionary = {key: key * key for key in keys}
-    print(dictionary)
+    return dictionary
 
 
 # problem 2
@@ -18,24 +18,24 @@ def get_even_list():
     for i in range(len(array)):
         if array[i] % 2 == 0:
             even_array.append(i)
-    print(even_array)
+    return even_array
 
 
 # problem 3
 def replace_cons(text):
     consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
                   'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
-    vovels = ['a', 'e', 'i', 'o', 'u', 'y']
+    vowels = ['a', 'e', 'i', 'o', 'u', 'y']
     for character in text:
         if character.lower() in consonants:
-            text = text.replace(character, random.choice(vovels))
-    print(string)
+            text = text.replace(character, random.choice(vowels))
+    return text
 
 
 # problem 4.1
 def get_set(x):
     unique_element = set(x)
-    print(list(unique_element))
+    return list(unique_element)
 
 
 # problem 4.2
@@ -46,25 +46,25 @@ def get_maximums(x):
         maximum = max(tmp)
         maximums.append(maximum)
         tmp.remove(maximum)
-    print(maximums)
+    return maximums
 
 
 # problem 4.3
 def get_index_of_min(x):
     minimum = min(x)
     index = x.index(minimum)
-    print(index)
+    return index
 
 
 # problem 4.4
 def reverse_list(x):
     x.reverse()
-    print(x)
+    return x
 
 
 # problem 5
 def get_same_keys(x, y):
-    print(x.keys() & y.keys())
+    return x.keys() & y.keys()
 
 
 numbers = [10, 11, 2, 3, 5, 8, 23, 11, 2, 5, 76, 43, 2, 32, 76, 3, 10, 0, 1]
@@ -74,15 +74,15 @@ dict_one = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 dict_two = {'a': 6, 'b': 7, 'z': 20, 'x': 40}
 
 
-generate_dict()
+print(generate_dict())
 
-get_even_list()
+print(get_even_list())
 
-replace_cons(string)
+print(replace_cons(string))
 
-get_set(numbers)
-get_maximums(numbers)
-get_index_of_min(numbers)
-reverse_list(numbers)
+print(get_set(numbers))
+print(get_maximums(numbers))
+print(get_index_of_min(numbers))
+print(reverse_list(numbers))
 
-get_same_keys(dict_one, dict_two)
+print(get_same_keys(dict_one, dict_two))
