@@ -32,8 +32,8 @@ result = {
 
 
 def group_by_key(data):
-    grouped_data = sorted(data, key=itemgetter('city'))
-    for key, group in itertools.groupby(grouped_data, key=lambda x: x['city']):
+    sorted_data = sorted(data, key=itemgetter('city'))
+    for key, group in itertools.groupby(sorted_data, key=lambda x: x['city']):
         print("'%s':" % key),
         print(list(group))
 
