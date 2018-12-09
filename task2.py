@@ -31,12 +31,12 @@ result = {
 }
 
 
-#
-# def group_by_key(dictionary, field):
-#     for key in itertools.groupby(data, key=itemgetter(field)):
-#         print(key)
-#
-# group_by_key(data, 'city')
+def group_by_key(data):
+    grouped_data = sorted(data, key=itemgetter('city'))
+    for key, group in itertools.groupby(grouped_data, key=lambda x: x['city']):
+        print("'%s':" % key),
+        print(list(group))
+
 
 # =======================================================
 # 2) У вас есть последовательность строк. Необходимо определить наиболее часто встречающуюся строку в последовательности.
@@ -89,12 +89,9 @@ def three_words(text):
     return result
 
 
-
-
-
-
 # print(sort_by_key(data, 'age'))
 
+# group_by_key(data)
 
 list_var = ['a', 'a', 'bi', 'bi', 'bi']
 # print(most_frequent(list_var))
