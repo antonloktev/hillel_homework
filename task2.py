@@ -15,7 +15,7 @@ data = [
 
 
 def sort_by_key(dictionary, key):
-    return sorted(dictionary, key=itemgetter(key))
+    return sorted(dictionary, key=lambda k: k[key])
      
 
 #1.2) сгруппировать данные по значению ключа 'city' 
@@ -31,11 +31,17 @@ result = {
 }
 
 
-def group_by_key(data):
-    sorted_data = sorted(data, key=itemgetter('city'))
-    for key, group in itertools.groupby(sorted_data, key=lambda x: x['city']):
-        print("'%s':" % key),
-        print(list(group))
+def group_by_city(data):
+    result = {}
+    for i in data:
+        new_list = [{'name': i['name'], 'age': i['age']}]
+        if i['city'] not in result:
+            result[i['city']] = new_list
+            i.pop('city')
+        else:
+            result[i['city']].append(i)
+            i.pop('city')
+    return result
 
 
 # =======================================================
@@ -91,15 +97,13 @@ def three_words(text):
 
 # print(sort_by_key(data, 'age'))
 
-# group_by_key(data)
+# print(group_by_city(data))
 
 list_var = ['a', 'a', 'bi', 'bi', 'bi']
 # print(most_frequent(list_var))
 
-
 x = 123405
 # print(multiplication_of_digits(x))
-
 
 nums = [1, 2, 3, 4, 5]
 n = 3
