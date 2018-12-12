@@ -15,8 +15,8 @@ data = [
 
 
 def sort_by_key(dictionary, key):
-    sorted_data = sorted(dictionary, key=itemgetter(key))
-    return sorted_data
+    return sorted(dictionary, key=itemgetter(key))
+     
 
 #1.2) сгруппировать данные по значению ключа 'city' 
 # вывод должен быть такого вида :
