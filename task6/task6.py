@@ -5,13 +5,13 @@ import re
 
 
 def diff(first, second):
-    """ This function find the difference between two list with keeping order."""
+    """ This function finds the difference between two list with keeping order."""
     second = set(second)
     return [item for item in first if item not in second]
 
 
 def delete_words_by_length(file, low_b=3, up_b=5):
-    """ This function delete words in the text by given length and overwrite the file.
+    """ This function deletes words in the text by given length and overwrites the file.
     Hereinafter, the word 'puncs' will mean punctuation marks in the text.
     Speciality: function deletes an even number of words on each line.
     For the odd case it will overwrite the last word in a line.
@@ -22,7 +22,7 @@ def delete_words_by_length(file, low_b=3, up_b=5):
     with open(file, "r+") as f:
         new_text = ""
         for line in f:
-            words = re.findall(r"[\w']+|[.,!?;:]", line)  # get a list of word including puncs like individual item
+            words = re.findall(r"[\w']+|[.,!?;:]", line)  # get a list of word including puncs as individual items
             short_words = [word for word in words if low_b <= len(word) <= up_b]
             if len(short_words) % 2 == 1:
                 del short_words[-1:]
@@ -43,7 +43,7 @@ delete_words_by_length("delete3-5.txt")
 
 
 def selected_surnames(read, write):
-    """ This function write in output file first name, last name and prone number of persons from a general list of
+    """ This function writes in output file first name, last name and prone number of persons from a general list of
     people (input file).
     :param read: Input file containing first name, last names and phone number of person
     :param write: Output file containing same info about people whose last name begins with a letter C or K
