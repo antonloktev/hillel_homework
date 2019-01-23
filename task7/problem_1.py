@@ -26,34 +26,16 @@ class IP(object):
         return self.value
 
     def get_reverse_items(self):
-        res = []
-        items = self.get_list()
-        for item in items:
-            s = str(item).split('.')
-            s.reverse()
-            rev_item = '.'.join(s)
-            res.append(rev_item)
-        return res
+        reverse_items = ['.'.join(item.split('.')[::-1]) for item in self._value]
+        return reverse_items
 
     def get_list_without_first_octets(self):
-        res = []
-        items = self.get_list()
-        for item in items:
-            s = str(item).split('.')
-            s.pop(0)
-            new_item = '.'.join(s)
-            res.append(new_item)
-        return res
+        without_first_octets = ['.'.join(item.split('.')[1:]) for item in self._value]
+        return without_first_octets
 
     def get_list_of_last_octets(self):
-        res = []
-        items = self.get_list()
-        for item in items:
-            s = str(item).split('.')
-            del s[0:3]
-            new_item = ''.join(s)
-            res.append(new_item)
-        return res
+        last_octets = [item.split('.')[-1] for item in self._value]
+        return last_octets
 
 
 ip = IP()
