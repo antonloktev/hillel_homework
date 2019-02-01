@@ -49,10 +49,6 @@ class Switch(object):
     def login(self, value):
         self._login = value
 
-    @login.deleter
-    def login(self):
-        del self._login
-
     @property
     def password(self):
         return self._password
