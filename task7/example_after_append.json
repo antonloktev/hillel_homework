@@ -1,0 +1,15 @@
+{
+    "ex_key": "ex_value",
+    "new_key": 42,
+    "a_list": [
+        2,
+        12,
+        24,
+        42,
+        15
+    ],
+    "kek": "lol",
+    "42": {
+        "figure": "circle"
+    }
+}
