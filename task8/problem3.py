@@ -1,6 +1,7 @@
 # Задача -3
 # Создать менеджер контекста который будет подсчитывать время выполняния блока инструкций
 import time
+from contextlib import contextmanager
 
 
 class Timer(object):
